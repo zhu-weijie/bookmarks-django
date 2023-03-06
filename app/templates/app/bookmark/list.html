@@ -1,0 +1,17 @@
+{% extends "app/base.html" %}
+
+{% block title %}My bookmark{% endblock %}
+
+{% block content %}
+<h1>My bookmark</h1>
+{% for bookmark in bookmarks %}
+<h2>
+  <a href="{% url 'app:bookmark_detail' bookmark.id %}">
+    {{ bookmark.link }}
+  </a>
+</h2>
+<p class="date">
+  Published {{ bookmark.publish }} by {{ bookmark.collctor }}
+</p>
+{% endfor %}
+{% endblock %}

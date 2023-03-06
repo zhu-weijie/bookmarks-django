@@ -1,0 +1,10 @@
+{% extends "app/base.html" %}
+
+{% block title %}{{ bookmark.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ bookmark.name }}: {{ bookmark.link }}</h1>
+<p class="date">
+  Published {{ bookmark.publish }} by {{ bookmark.collector }}
+</p>
+{% endblock %}
