@@ -8,6 +8,10 @@ def bookmark_list(request):
     return render(request, 'app/bookmark/list.html', {'bookmarks': bookmarks})
 
 
-def bookmark_detail(request, id):
-    bookmark = get_object_or_404(Bookmark, id=id)
+def bookmark_detail(request, year, month, day, bookmark):
+    bookmark = get_object_or_404(Bookmark,
+                                 slug=bookmark,
+                                 publish__year=year,
+                                 publish__month=month,
+                                 publish__day=day)
     return render(request, 'app/bookmark/detail.html', {'bookmark': bookmark})

@@ -6,7 +6,7 @@
 <h1>My bookmark</h1>
 {% for bookmark in bookmarks %}
 <h2>
-  <a href="{% url 'app:bookmark_detail' bookmark.id %}">
+  <a href="{{ bookmark.get_absolute_url }}">
     {{ bookmark.link }}
   </a>
 </h2>

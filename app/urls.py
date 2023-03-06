@@ -5,5 +5,7 @@ app_name = 'app'
 
 urlpatterns = [
     path('', views.bookmark_list, name='bookmark_list'),
-    path('<int:id>/', views.bookmark_detail, name='bookmark_detail'),
+    path('<int:year>/<int:month>/<int:day>/<slug:bookmark>/',
+         views.bookmark_detail,
+         name='bookmark_detail'),
 ]
