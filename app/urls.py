@@ -8,4 +8,5 @@ urlpatterns = [
     path('<int:year>/<int:month>/<int:day>/<slug:bookmark>/',
          views.bookmark_detail,
          name='bookmark_detail'),
+    
 ]

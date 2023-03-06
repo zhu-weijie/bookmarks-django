@@ -7,12 +7,21 @@
 {% for bookmark in bookmarks %}
 <h2>
   <a href="{{ bookmark.get_absolute_url }}">
-    {{ bookmark.link }}
+    {{ bookmark.name }}: {{ bookmark.link }}
   </a>
 </h2>
 <p class="date">
-  Published {{ bookmark.publish }} by {{ bookmark.collctor }}
+  Published {{ bookmark.publish }} by {{ bookmark.collector }} <button class="button button2"
+    onclick="window.location.href='{% url 'admin:app_bookmark_change' bookmark.id %}';">
+    Update
+  </button> <button class="button button3"
+    onclick="window.location.href='{% url 'admin:app_bookmark_delete' bookmark.id %}';">
+    Delete
+  </button>
 </p>
 {% endfor %}
 {% include "pagination.html" with page=bookmarks %}
+<button class="button button1" onclick="window.location.href='{% url 'admin:app_bookmark_add' %}';">
+  Add bookmark
+</button>
 {% endblock %}
