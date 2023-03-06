@@ -14,4 +14,5 @@
   Published {{ bookmark.publish }} by {{ bookmark.collctor }}
 </p>
 {% endfor %}
+{% include "pagination.html" with page=bookmarks %}
 {% endblock %}
